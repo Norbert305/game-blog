@@ -86,4 +86,18 @@ ul li {
     font-size: large;
 }
 
+.signUp {
+    margin: 150px auto;
+}
+
+.signUp .middle {
+    background-color: lightgray;
+    border: solid 2px darkblue;
+}
+
+.letter-shadow {
+    text-shadow: 2px 2px darkblue;
+
+}
+
 

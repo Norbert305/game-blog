@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -59,11 +60,13 @@ export const Home = () => {
 						provided to you!! The best games from the past,
 						present and future are here nooooowwwwwwww!!!!!!!!!!
 					</p>
+					<Link to="/SignUpPage">
 					<button
 						type="button"
 						className="btn btn-primary btn-lg">
 						Sign Up
 					</button>
+					</Link>
 					<hr />
 					<h1>Login</h1>
 					<p>If already a member please login!!!</p>
