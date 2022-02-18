@@ -3,57 +3,52 @@
 */
 
 html body {
-    background-image: url("https://cdn.vox-cdn.com/thumbor/rfvqzM4bkPZ_Jfe6sXIwIMI3cFs=/0x0:2400x1600/1200x800/filters:focal(0x1216:384x1600)/cdn.vox-cdn.com/uploads/chorus_image/image/55015003/playstation_logo_buttons_photo_2400.0.jpg");
-    width: 100%;
-    height: 100%;
-    margin: auto;   
-    text-align: center;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  background-image: url("https://cdn.vox-cdn.com/thumbor/rfvqzM4bkPZ_Jfe6sXIwIMI3cFs=/0x0:2400x1600/1200x800/filters:focal(0x1216:384x1600)/cdn.vox-cdn.com/uploads/chorus_image/image/55015003/playstation_logo_buttons_photo_2400.0.jpg");
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
-
-
 
 section {
-    width: 50%;
-    height: 700px;
-    margin: 400px auto;
-    background-color: white;
-    text-align: center;
-    font-weight: 700;
-    border: solid 2px darkblue;
+  width: 50%;
+  height: 700px;
+  margin: 400px auto;
+  background-color: white;
+  text-align: center;
+  font-weight: 700;
+  border: solid 2px darkblue;
 }
 
-article p{
-    padding: 80px 0;
-    font-size: large;
+article p {
+  padding: 80px 0;
+  font-size: large;
 }
 
 .gamesOfYear {
-    margin-top: 150px;
-    margin-bottom: 150px;
-    border-bottom: 6px solid white;
-    margin-left: 40%;
-    margin-right: 40%;
-    padding-bottom: 20px;
-
-    
+  margin-top: 150px;
+  margin-bottom: 150px;
+  border-bottom: 6px solid white;
+  margin-left: 40%;
+  margin-right: 40%;
+  padding-bottom: 20px;
 }
 
 .card {
-    margin-bottom: 100px;
-    height: 720px;
-    background-color: rgb(78, 78, 78);
-    color: white;
-    text-align: center;
-    padding: 250px 0;
-
+  margin-bottom: 100px;
+  height: 720px;
+  background-color: rgb(78, 78, 78);
+  color: white;
+  text-align: center;
+  padding: 250px 0;
 }
 
 .card p {
-    font-size: 25px; 
+  font-size: 25px;
 }
 /* 
 .big-card:hover {
@@ -62,42 +57,44 @@ article p{
  } */
 
 .images {
-    height: 720px;
+  height: 720px;
 }
- 
 
 .about {
-    background-color: white;
-    width: 700px;
-    height: 300px;
-    margin: 0 auto;
-    border: solid darkblue 2px;
-    box-shadow: 10px 5px 5px lightblue;
+  background-color: white;
+  width: 700px;
+  height: 300px;
+  margin: 0 auto;
+  border: solid darkblue 2px;
+  box-shadow: 10px 5px 5px lightblue;
 }
 
 .about p {
-    padding: 40px 0;
+  padding: 40px 0;
 }
 
 ul li {
-    color: white;
-    display: inline-block;
-    width: 80px;
-    font-size: large;
+  color: white;
+  display: inline-block;
+  width: 80px;
+  font-size: large;
 }
 
-.signUp {
-    margin: 150px auto;
+.signUp,
+.Login {
+  margin: 150px auto;
 }
 
 .signUp .middle {
-    background-color: lightgray;
-    border: solid 2px darkblue;
+  background-color: lightgray;
+  border: solid 2px darkblue;
+}
+
+.Login .middle {
+  background-color: lightgray;
+  border: solid 2px darkblue;
 }
 
 .letter-shadow {
-    text-shadow: 2px 2px darkblue;
-
+  text-shadow: 2px 2px darkblue;
 }
-
-

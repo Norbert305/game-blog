@@ -1,10 +1,8 @@
 import React from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
 
-export const SignUpPage = () => {
+export const Login = () => {
   return (
-    <div className="signUp">
+    <div className="Login">
       <div className="row">
         <div className="col-4"></div>
         <div className="col-4 middle">
@@ -13,19 +11,8 @@ export const SignUpPage = () => {
               className="text-center letter-shadow"
               style={{ color: "wheat" }}
             >
-              Sign Up
+              Login
             </h1>
-            <div className="mb-3">
-              <label for="exampleInputName1" className="form-label">
-                Name
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="exampleInputName1"
-                placeholder="Name"
-              />
-            </div>
             <div className="mb-3">
               <label for="exampleInputEmail1" className="form-label">
                 Email Address
@@ -52,30 +39,8 @@ export const SignUpPage = () => {
                 placeholder="Password"
               />
             </div>
-            <div className="mb-3">
-              <label for="exampleInputNumber" className="form-label">
-                Phone Number
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="exampleInputPhoneNumber1"
-                placeholder="Phone Number"
-              />
-            </div>
-            <div className="mb-3">
-              <label for="exampleInputNumber" className="form-label">
-                Address
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="exampleInputAddress1"
-                placeholder="Address"
-              />
-            </div>
             <button type="submit" className="btn btn-primary">
-              Submit
+              Login
             </button>
           </form>
           <div className="col-4"></div>
