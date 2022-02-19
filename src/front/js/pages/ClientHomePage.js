@@ -21,9 +21,11 @@ export const ClientHomePage = () => {
       <hr />
       <div>
         <h2>Article Page</h2>
-        <button type="button" class="btn btn-primary btn-lg">
-          Article Page
-        </button>
+        <Link to="/ArticlePage">
+          <button type="button" class="btn btn-primary btn-lg">
+            Article Page
+          </button>
+        </Link>
       </div>
       <br />
       <br />

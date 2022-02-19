@@ -15,6 +15,7 @@ import { Login } from "./pages/Login";
 import { ClientHomePage } from "./pages/ClientHomePage";
 import { ClientProfilePage } from "./pages/ClientProfilePage";
 import { EditProfile } from "./pages/EditProfile";
+import { ArticlePage } from "./pages/ArticlePage";
 
 //create your first component
 const Layout = () => {
@@ -45,6 +46,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/EditProfile">
               <EditProfile />
+            </Route>
+            <Route exact path="/ArticlePage">
+              <ArticlePage />
             </Route>
             <Route exact path="/demo">
               <Demo />
