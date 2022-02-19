@@ -1,7 +1,17 @@
-import React from "react";
+import { React } from "react";
 import { Link } from "react-router-dom";
 
 export const EditProfile = () => {
+  // const [updatedUser, setUpdatedUser] = useState({
+  //   full_name: store.loggedUser.full_name,
+  //   email: store.loggedUser.email,
+  //   phone: store.loggedUser.phone,
+  //   address: store.loggedUser.address,
+  // });
+
+  // const handleChange = (e) =>
+  //   setUpdatedUser({ ...updatedUser, [e.target.name]: e.target.value });
+
   return (
     <div className="signUp">
       <div className="row">
@@ -26,6 +36,8 @@ export const EditProfile = () => {
                 className="form-control"
                 id="exampleInputName1"
                 placeholder="Name"
+                // onChange={handleChange}
+                // value={updatedUser.full_name}
               />
             </div>
             <div className="mb-3">
@@ -38,6 +50,8 @@ export const EditProfile = () => {
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 placeholder="Email Address"
+                // onChange={handleChange}
+                // value={updatedUser.email}
               />
               <div id="emailHelp" className="form-text">
                 We'll never share your email with anyone else.
@@ -52,6 +66,8 @@ export const EditProfile = () => {
                 className="form-control"
                 id="exampleInputPhoneNumber1"
                 placeholder="Phone Number"
+                // onChange={handleChange}
+                // value={updatedUser.phone}
               />
             </div>
             <div className="mb-3">
@@ -63,6 +79,8 @@ export const EditProfile = () => {
                 className="form-control"
                 id="exampleInputAddress1"
                 placeholder="Address"
+                // onChange={handleChange}
+                // value={updatedUser.address}
               />
             </div>
             <Link to="/ClientProfilePage">

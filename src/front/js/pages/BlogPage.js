@@ -1,7 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export const BlogPage = () => {
+  const [newUser, setNewUser] = useState({
+    user_type: "client",
+    game_name: null,
+    select_console: null,
+    year: null,
+    rating: null,
+    blog_post: null,
+  });
+
+  const handleChange = (e) =>
+    setNewUser({ ...newUser, [e.target.name]: e.target.value });
+
   return (
     <div className="BlogPost">
       <div className="row">
@@ -23,12 +36,14 @@ export const BlogPage = () => {
                 className="form-control"
                 id="exampleInputName1"
                 placeholder="Name of Game"
+                name="game_name"
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3">
               <label>For What Gaming System? </label>
               <br />
-              <select id="game" name="game" required>
+              <select id="game" name="select_console" onChange={handleChange}>
                 <option value="PlayStation5">PlayStaion 5</option>
                 <option value="Xbox">Xbox Series X</option>
                 <option value="Nintendo">Nintendo</option>
@@ -44,11 +59,13 @@ export const BlogPage = () => {
                 className="form-control"
                 id="exampleInputPhoneNumber1"
                 placeholder="What Year"
+                name="year"
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3">
               <label for="exampleInputNumber" className="form-label">
-                Raiting out of 10?
+                Rating out of 10?
               </label>
               <input
                 type="Number"
@@ -57,6 +74,8 @@ export const BlogPage = () => {
                 className="form-control"
                 id="exampleInputAddress1"
                 placeholder="10 being the best"
+                name="rating"
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3">
@@ -67,6 +86,8 @@ export const BlogPage = () => {
                 name="message"
                 min="8"
                 max="100"
+                name="blog_post"
+                onChange={handleChange}
               ></textarea>
             </div>
             <Link to="/ClientHomePage">
