@@ -98,3 +98,13 @@ ul li {
 .letter-shadow {
   text-shadow: 2px 2px darkblue;
 }
+
+.homePage {
+  width: 50%;
+  height: 700px;
+  margin: 400px auto;
+  background-color: white;
+  text-align: center;
+  font-weight: 700;
+  border: solid 2px darkblue;
+}

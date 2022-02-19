@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Login = () => {
   return (
@@ -39,9 +40,11 @@ export const Login = () => {
                 placeholder="Password"
               />
             </div>
-            <button type="submit" className="btn btn-primary">
-              Login
-            </button>
+            <Link to="/ClientHomePage">
+              <button type="submit" className="btn btn-primary">
+                Login
+              </button>
+            </Link>
           </form>
           <div className="col-4"></div>
         </div>
