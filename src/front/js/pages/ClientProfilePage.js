@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const ClientProfilePage = () => {
   return (
@@ -29,10 +30,18 @@ export const ClientProfilePage = () => {
           {/* {store.loggedUser.zip_code} */}
         </h5>
       </div>
-
-      <button type="submit" className="btn btn-primary">
-        Edit Profile
-      </button>
+      <Link to="/EditProfile">
+        <button type="submit" className="btn btn-primary">
+          Edit Profile
+        </button>
+      </Link>
+      <br />
+      <br />
+      <Link to="/ClientHomePage">
+        <button type="submit" className="btn btn-primary">
+          Back Home
+        </button>
+      </Link>
     </div>
   );
 };
