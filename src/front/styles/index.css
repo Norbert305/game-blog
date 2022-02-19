@@ -81,7 +81,8 @@ ul li {
 }
 
 .signUp,
-.Login {
+.Login,
+.profile {
   margin: 150px auto;
 }
 
@@ -93,6 +94,23 @@ ul li {
 .Login .middle {
   background-color: lightgray;
   border: solid 2px darkblue;
+}
+
+.profile {
+  background-color: lightgray;
+  border: solid 2px darkblue;
+  width: 50%;
+  height: 700px;
+  margin: 400px auto;
+  background-color: white;
+  text-align: center;
+  font-weight: 700;
+  border: solid 2px darkblue;
+}
+
+.profile h5 {
+  text-align: left;
+  margin: 20px 150px;
 }
 
 .letter-shadow {

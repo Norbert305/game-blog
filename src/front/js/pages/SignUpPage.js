@@ -74,9 +74,11 @@ export const SignUpPage = () => {
                 placeholder="Address"
               />
             </div>
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
+            <Link to="/Login">
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            </Link>
           </form>
           <div className="col-4"></div>
         </div>
