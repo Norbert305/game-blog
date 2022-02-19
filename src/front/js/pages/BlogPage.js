@@ -5,8 +5,8 @@ export const BlogPage = () => {
   return (
     <div className="BlogPost">
       <div className="row">
-        <div className="col-4"></div>
-        <div className="col-4 middle">
+        <div className="col-2"></div>
+        <div className="col-8 middle">
           <form>
             <h1
               className="text-center letter-shadow"
@@ -27,6 +27,7 @@ export const BlogPage = () => {
             </div>
             <div className="mb-3">
               <label>For What Gaming System? </label>
+              <br />
               <select id="game" name="game" required>
                 <option value="PlayStation5">PlayStaion 5</option>
                 <option value="Xbox">Xbox Series X</option>
@@ -59,7 +60,8 @@ export const BlogPage = () => {
               />
             </div>
             <div className="mb-3">
-              <label for="message">Meaningful Message:</label>
+              <label for="message">Talk about the game:</label>
+              <br />
               <textarea
                 id="message"
                 name="message"
@@ -72,8 +74,13 @@ export const BlogPage = () => {
                 Back Home
               </button>
             </Link>
+            <br />
+            <br />
+            <button type="submit" className="btn btn-primary">
+              Post Blog
+            </button>
           </form>
-          <div className="col-4"></div>
+          <div className="col-2"></div>
         </div>
       </div>
     </div>
