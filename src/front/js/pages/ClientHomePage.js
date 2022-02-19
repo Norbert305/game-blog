@@ -32,9 +32,11 @@ export const ClientHomePage = () => {
       <hr />
       <div>
         <h2>Make a Blog</h2>
-        <button type="button" class="btn btn-primary btn-lg">
-          Blog Page
-        </button>
+        <Link to="/BlogPage">
+          <button type="button" class="btn btn-primary btn-lg">
+            Blog Page
+          </button>
+        </Link>
       </div>
     </div>
   );

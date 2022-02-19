@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const EditProfile = () => {
+export const BlogPage = () => {
   return (
-    <div className="signUp">
+    <div className="BlogPost">
       <div className="row">
         <div className="col-4"></div>
         <div className="col-4 middle">
@@ -12,62 +12,64 @@ export const EditProfile = () => {
               className="text-center letter-shadow"
               style={{ color: "wheat" }}
             >
-              User Information
+              Make Your Blog Here!!
             </h1>
-            <br />
-            <br />
-            <h2>Edit fields bellow</h2>
             <div className="mb-3">
               <label for="exampleInputName1" className="form-label">
-                Name
+                Name of Game?
               </label>
               <input
                 type="text"
                 className="form-control"
                 id="exampleInputName1"
-                placeholder="Name"
+                placeholder="Name of Game"
               />
             </div>
             <div className="mb-3">
-              <label for="exampleInputEmail1" className="form-label">
-                Email Address
-              </label>
-              <input
-                type="email"
-                className="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Email Address"
-              />
-              <div id="emailHelp" className="form-text">
-                We'll never share your email with anyone else.
-              </div>
+              <label>For What Gaming System? </label>
+              <select id="game" name="game" required>
+                <option value="PlayStation5">PlayStaion 5</option>
+                <option value="Xbox">Xbox Series X</option>
+                <option value="Nintendo">Nintendo</option>
+                <option value="PC">PC</option>
+              </select>
             </div>
             <div className="mb-3">
               <label for="exampleInputNumber" className="form-label">
-                Phone Number
+                Year it Came Out?
               </label>
               <input
                 type="text"
                 className="form-control"
                 id="exampleInputPhoneNumber1"
-                placeholder="Phone Number"
+                placeholder="What Year"
               />
             </div>
             <div className="mb-3">
               <label for="exampleInputNumber" className="form-label">
-                Address
+                Raiting out of 10?
               </label>
               <input
-                type="text"
+                type="Number"
+                max="10"
+                min="0"
                 className="form-control"
                 id="exampleInputAddress1"
-                placeholder="Address"
+                placeholder="10 being the best"
               />
             </div>
-            <Link to="/ClientProfilePage">
+            <div className="mb-3">
+              <label for="message">Meaningful Message:</label>
+              <textarea
+                id="message"
+                name="message"
+                min="8"
+                max="100"
+              ></textarea>
+            </div>
+            <Link to="/ClientHomePage">
               <button type="submit" className="btn btn-primary">
-                Save Changes
+                Back Home
               </button>
             </Link>
           </form>
