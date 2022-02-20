@@ -4,9 +4,11 @@ db = SQLAlchemy()
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    #Request Body Data
+    user_type = db.Column(db.String(120), nullable=True)
+    full_name = db.Column(db.String(120), nullable=True)
     email = db.Column(db.String(120), unique=True, nullable=True)
     password = db.Column(db.String(80), unique=False, nullable=True)
-    full_name = db.Column(db.Boolean(), unique=False, nullable=True)
     phone = db.Column(db.String(120), unique=False, nullable=True)
     address = db.Column(db.String(120), nullable=True)
 
@@ -49,10 +51,10 @@ class Blogger(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "game_name": self.vehicle_type,
-            "select_console": self.vehicle_model,
-            "year": self.vehicle_make,
-            "rating": self.vehicle_year,
-            "blog_post": self.vehicle_color,
+            "game_name": self.game_name,
+            "select_console": self.select_console,
+            "year": self.year,
+            "rating": self.rating,
+            "blog_post": self.blog_post,
             "user_id": self.user_id,
         }
