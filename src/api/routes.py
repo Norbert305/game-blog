@@ -149,6 +149,6 @@ def delete_blogger(id):
     db.session.delete(blogger)
     db.session.commit()
 
-    blogger_query = Vehicle.query.all()
+    blogger_query = Blogger.query.all()
     all_bloggers = list(map(lambda x: x.serialize(), blogger_query))
     return jsonify(all_bloggers), 200
