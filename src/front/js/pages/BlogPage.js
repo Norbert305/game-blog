@@ -1,19 +1,21 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Context } from "../store/appContext";
 
 export const BlogPage = () => {
-  const [newUser, setNewUser] = useState({
-    user_type: "client",
+  const { actions, store } = useContext(Context);
+
+  const [newBlogger, setnewBlogger] = useState({
     game_name: null,
     select_console: null,
     year: null,
     rating: null,
     blog_post: null,
+    user_id: store.loggedUser.id,
   });
 
   const handleChange = (e) =>
-    setNewUser({ ...newUser, [e.target.name]: e.target.value });
+    setnewBlogger({ ...newBlogger, [e.target.name]: e.target.value });
 
   return (
     <div className="BlogPost">
@@ -83,7 +85,6 @@ export const BlogPage = () => {
               <br />
               <textarea
                 id="message"
-                name="message"
                 min="8"
                 max="100"
                 name="blog_post"
@@ -97,9 +98,17 @@ export const BlogPage = () => {
             </Link>
             <br />
             <br />
-            <button type="submit" className="btn btn-primary">
-              Post Blog
-            </button>
+            <Link to="/BlogPosted">
+              <button
+                type="submit"
+                className="btn btn-primary"
+                onClick={() => {
+                  actions.addBlogger(newBlogger);
+                }}
+              >
+                Post Blog
+              </button>
+            </Link>
           </form>
           <div className="col-2"></div>
         </div>

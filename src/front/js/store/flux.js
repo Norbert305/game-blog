@@ -1,49 +1,63 @@
 const getState = ({ getStore, getActions, setStore }) => {
-	return {
-		store: {
-			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
-		},
-		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
+  return {
+    store: {
+      backEndUrl: process.env.BACKEND_URL,
+      loggedUser: {},
+      postBloggers: [],
+    },
+    actions: {
+      // Use getActions to call a function within a fuction
 
-			getMessage: () => {
-				// fetching data from the backend
-				fetch(process.env.BACKEND_URL + "/api/hello")
-					.then(resp => resp.json())
-					.then(data => setStore({ message: data.message }))
-					.catch(error => console.log("Error loading message from backend", error));
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
+      getBloggers: (id) => {
+        fetch(`${getStore().backEndUrl}/api/blogger/user/${id}`)
+          .then((response) => response.json())
+          .then((data) => setStore({ postBloggers: data }))
+          .catch((err) => console.error("Error:", err));
+      },
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
+      getUser: () => {
+        fetch(`${getStore().backEndUrl}/api/user`)
+          .then((res) => res.json())
+          .then((data) => setStore({ loggedUser: data }))
+          .catch((err) => console.error(err));
+      },
 
-				//reset the global store
-				setStore({ demo: demo });
-			}
-		}
-	};
+      addBlogger: (newBlogger) => {
+        fetch(`${getStore().backEndUrl}/api/blogger`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newBlogger),
+        })
+          .then((response) => response.json())
+          .then((data) => setStore({ postBloggers: data }))
+          .catch((err) => console.error("Error:", err));
+      },
+
+      updateProfile: (updatedProfile, id) => {
+        fetch(`${getStore().backEndUrl}/api/user/${id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(updatedProfile),
+        })
+          .then((response) => response.json())
+          .then((data) => setStore({ loggedUser: data }))
+          .catch((err) => console.error("Error:", err));
+      },
+
+      deleteBlogger: (id) => {
+        fetch(`${getStore().backEndUrl}/api/blogger/${id}`, {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .then((data) => setStore({ postBloggers: data }))
+          .catch((err) => console.error("Error:", err));
+      },
+
+      updateUser: (loginInfo) => {
+        setStore({ loggedUser: loginInfo });
+      },
+    },
+  };
 };
 
 export default getState;

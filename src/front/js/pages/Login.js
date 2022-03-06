@@ -1,20 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { Context } from "../store/appContext";
 
 export const Login = () => {
+  const { store, actions } = useContext(Context);
+
   const [newContact, setnewContact] = useState({
     email: null,
     password: null,
   });
 
-  const [valid, setValid] = useState({
-    state: false,
-    type: "",
-  });
-
   const handleChange = (e) =>
     setnewContact({ ...newContact, [e.target.name]: e.target.value });
+
+  const myFetch = (contactInfo) => {
+    fetch(`${store.backEndUrl}/api/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(contactInfo),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        actions.updateUser(data);
+      })
+      .catch((err) => {
+        console.error("Incorrect Information", err);
+        alert("Incorrect Information");
+      });
+  };
 
   return (
     <div className="Login">
@@ -59,7 +74,11 @@ export const Login = () => {
               />
             </div>
             <Link to="/ClientHomePage">
-              <button type="submit" className="btn btn-primary">
+              <button
+                type="submit"
+                className="btn btn-primary"
+                onClick={() => myFetch(newContact)}
+              >
                 Login
               </button>
             </Link>

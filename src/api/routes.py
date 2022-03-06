@@ -78,7 +78,7 @@ def user_login():
     ), 200
 
 
-#Adding a new vehicle
+#Adding a new Blogger
 @api.route('/blogger', methods=['POST'])
 def add_blogger():
 
@@ -112,6 +112,9 @@ def get_blogger(user_id):
     return jsonify(
         all_bloggers
     ), 200
+
+
+
 
 
 

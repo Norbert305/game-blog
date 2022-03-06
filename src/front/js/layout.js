@@ -14,9 +14,11 @@ import { SignUpPage } from "./pages/SignUpPage";
 import { Login } from "./pages/Login";
 import { ClientHomePage } from "./pages/ClientHomePage";
 import { ClientProfilePage } from "./pages/ClientProfilePage";
-import { EditProfile } from "./pages/EditProfile";
 import { ArticlePage } from "./pages/ArticlePage";
 import { BlogPage } from "./pages/BlogPage";
+import { BlogPosted } from "./pages/BlogPosted";
+import { UserNavBar } from "./component/UserNavBar";
+import { EditProfile } from "./pages/EditProfile";
 
 //create your first component
 const Layout = () => {
@@ -33,6 +35,9 @@ const Layout = () => {
             <Route exact path="/">
               <Home />
             </Route>
+            <Route exact path="/UserNavBar">
+              <UserNavBar />
+            </Route>
             <Route exact path="/SignUpPage">
               <SignUpPage />
             </Route>
@@ -40,19 +45,28 @@ const Layout = () => {
               <Login />
             </Route>
             <Route exact path="/ClientHomePage">
+              <UserNavBar />
               <ClientHomePage />
             </Route>
             <Route exact path="/ClientProfilePage">
+              <UserNavBar />
               <ClientProfilePage />
             </Route>
             <Route exact path="/EditProfile">
+              <UserNavBar />
               <EditProfile />
             </Route>
             <Route exact path="/ArticlePage">
+              <UserNavBar />
               <ArticlePage />
             </Route>
             <Route exact path="/BlogPage">
+              <UserNavBar />
               <BlogPage />
+            </Route>
+            <Route exact path="/BlogPosted">
+              <UserNavBar />
+              <BlogPosted />
             </Route>
             <Route exact path="/demo">
               <Demo />

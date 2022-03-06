@@ -1,8 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const SignUpPage = () => {
+  const { store } = useContext(Context);
+
   const [newUser, setNewUser] = useState({
     user_type: "client",
     full_name: null,
@@ -14,6 +17,18 @@ export const SignUpPage = () => {
 
   const handleChange = (e) =>
     setNewUser({ ...newUser, [e.target.name]: e.target.value });
+
+  const addUser = (myNewUser) => {
+    console.log("new user");
+    fetch(`${store.backEndUrl}/api/user`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(myNewUser),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.error("Error:", err));
+  };
 
   return (
     <div className="signUp">
@@ -97,7 +112,11 @@ export const SignUpPage = () => {
               />
             </div>
             <Link to="/Login">
-              <button type="submit" className="btn btn-primary">
+              <button
+                type="submit"
+                className="btn btn-primary"
+                onClick={() => addUser(newUser)}
+              >
                 Submit
               </button>
             </Link>

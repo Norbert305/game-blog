@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+import { useContext } from "react";
 
 export const ClientProfilePage = () => {
+  const { store } = useContext(Context);
+
   return (
     <div className="profile">
       <h1 className="text-center letter-shadow" style={{ color: "wheat" }}>
@@ -14,22 +18,19 @@ export const ClientProfilePage = () => {
           <strong>User Information</strong>
         </h3>
         <h5>
-          <strong>Full Name: </strong>
-          {/* {store.loggedUser.full_name} */}
+          <strong>Full Name: {store.loggedUser.full_name} </strong>
         </h5>
         <h5>
-          <strong>Email: </strong>
-          {/* {store.loggedUser.email} */}
+          <strong>Email: {store.loggedUser.email}</strong>
         </h5>
         <h5>
-          <strong>Phone: </strong>
-          {/* {store.loggedUser.phone} */}
+          <strong>Phone: {store.loggedUser.phone}</strong>
         </h5>
         <h5>
-          <strong>Address: </strong>
-          {/* {store.loggedUser.zip_code} */}
+          <strong>Address: {store.loggedUser.address}</strong>
         </h5>
       </div>
+
       <Link to="/EditProfile">
         <button type="submit" className="btn btn-primary">
           Edit Profile
