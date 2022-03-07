@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "../store/appContext";
 
 export const UserNavBar = () => {
+  const { actions, store } = useContext(Context);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -34,8 +38,14 @@ export const UserNavBar = () => {
               Profile
             </a>
             <Link to="/">
-              <a className="nav-link" href="#">
-                Logout
+              <a
+                className="nav-link"
+                href="#"
+                onClick={() => {
+                  actions.logOut();
+                }}
+              >
+                LogOut
               </a>
             </Link>
           </div>

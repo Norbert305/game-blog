@@ -24,35 +24,23 @@ export const BlogPosted = () => {
                 key={index}
               >
                 <p className="mx-2 m-1 text-start">
-                  <h5>
-                    <strong>Name of Video Game: {value.game_name}</strong>
-                  </h5>
+                  <strong>Name of Video Game: {value.game_name}</strong>
                 </p>
                 <p className="mx-2 m-1 text-start">
-                  <h5>
-                    <strong>Game System: {value.select_console}</strong>
-                  </h5>
+                  <strong>Game System: {value.select_console}</strong>
                 </p>
                 <p className="mx-2 m-1 text-start">
-                  <h5>
-                    <strong>Year: {value.year}</strong>
-                  </h5>
+                  <strong>Year: {value.year}</strong>
                 </p>
                 <p className="mx-2 m-1 text-start">
-                  <h5>
-                    <strong>Rating: {value.rating}</strong>
-                  </h5>
+                  <strong>Rating: {value.rating}</strong>
                 </p>
                 <p className="mx-2 m-1 text-start">
-                  <h5>
-                    <strong>Description: {value.blog_post}</strong>
-                  </h5>
+                  <strong>Description: {value.blog_post}</strong>
                 </p>
                 <button
                   className="btn btn-primary"
-                  onClick={() => {
-                    action.deleteBlogger(value.id);
-                  }}
+                  onClick={() => action.deleteBlogger(value.id)}
                 >
                   Delete Blog
                 </button>

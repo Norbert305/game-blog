@@ -109,6 +109,11 @@ export const BlogPage = () => {
                 Post Blog
               </button>
             </Link>
+            <br />
+            <br />
+            <Link to="/BlogPosted">
+              <button className="btn btn-primary">See Blogs</button>
+            </Link>
           </form>
           <div className="col-2"></div>
         </div>

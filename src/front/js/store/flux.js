@@ -56,6 +56,11 @@ const getState = ({ getStore, getActions, setStore }) => {
       updateUser: (loginInfo) => {
         setStore({ loggedUser: loginInfo });
       },
+
+      logOut: () => {
+        setStore({ loggedUser: {} });
+        setStore({ postBloggers: [] });
+      },
     },
   };
 };
